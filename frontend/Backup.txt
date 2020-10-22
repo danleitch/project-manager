@@ -1,0 +1,60 @@
+import React from 'react';
+import './App.css';
+
+function App() {
+
+  let titleData = "";
+  //capture method
+  const titleHandler = (e) => {
+    const rawTitleData = (e.target.value);
+    titleData = rawTitleData
+    console.log(rawTitleData);
+  }
+
+
+
+  //submitting method.
+  const submitFunc = () => {
+    console.log(titleData);
+    fetch('http://localhost:8080/projects', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: titleData
+
+      })
+    }).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    });
+
+  }
+
+
+  return (
+    <div className="App">
+      <h1>Hello Projects😀</h1>
+
+      <h2>Add your project in 4 easy steps!</h2>
+      <h3>Enter Project Title</h3>
+      1. <input placeholder="Enter Title" onChange={titleHandler}></input>
+
+      <h3>Enter Project Description</h3>
+      2. <input placeholder="Enter Description" onChange={titleHandler}></input>
+
+      <h3>Enter Project URL</h3>
+      3.<input placeholder="Enter URL" onChange={titleHandler}></input>
+
+      <br />
+      <br />
+      4. <button onClick={submitFunc}>Submit to File</button>
+
+    </div>
+  );
+}
+
+export default App;
