@@ -33,7 +33,7 @@ function App() {
   //submitting method.
   const submitFunc = () => {
     console.log(titleData, descriptionData, urlData);
-    fetch('http://localhost:8080/projects', {
+    fetch('/projects', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

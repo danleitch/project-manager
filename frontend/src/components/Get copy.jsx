@@ -11,7 +11,7 @@ function Get() {
     // similar to componentDidMount()
 
     useEffect(() => {
-        fetch("http://localhost:8080/api")
+        fetch("/api")
             .then(res => res.json())
             .then(
                 (result) => {

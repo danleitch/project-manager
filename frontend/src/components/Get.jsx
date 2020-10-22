@@ -6,7 +6,7 @@ function Get() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api")
+        fetch("/api")
             .then(res => res.json())
             .then(
                 (result) => {

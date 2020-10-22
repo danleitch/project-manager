@@ -15,7 +15,7 @@ function Delete() {
 
     function removeFunc() {
         if (window.confirm('Are you sure you want to delete - Entire ' + idData + "?")) {
-            fetch('http://localhost:8080/delete/' + idData, {
+            fetch('/delete/' + idData, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
